@@ -1,0 +1,38 @@
+# Used to read properties (secrets) injected by hashicorp vault in the FS on cloud env
+# Disabling on local env as we'll not use vault during development
+external.properties.enabled: false
+
+springdoc:
+  api-docs:
+    path: /internal/api-docs
+
+spring.datasource:
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/bapsKMSData?prepareThreshold=0
+  username: bapsAdmin
+  password: admin
+
+spring.flyway:
+  enabled: true
+
+spring.data:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    ssl: false
+
+#used to generate database script in local which helps us to create flyway migration scripts.
+spring.jpa:
+  properties:
+    #used to generate database script in local which helps us to create flyway migration scripts.
+    javax.persistence.schema-generation:
+      create-source: metadata
+      scripts:
+        action: create
+        create-target: update-script.sql
+    hibernate:
+      show_sql: true
+      format_sql: true
+
+client:
+  url: localhost:8081
