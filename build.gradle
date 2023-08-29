@@ -41,7 +41,7 @@ dependencies {
 	implementation 'org.flywaydb:flyway-core:9.16.1'
 
 	// RSQL / FIQL
-	implementation 'io.github.perplexhub:rsql-jpa-spring-boot-starter:6.0.4'
+	implementation 'io.github.perplexhub:rsql-jpa-spring-boot-starter:6.0.7'
 
 	// Resilience
 	implementation 'io.github.resilience4j:resilience4j-spring-boot2:2.0.2'
